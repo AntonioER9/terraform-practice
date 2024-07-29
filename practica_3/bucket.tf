@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "proveedores" {
   count  = 6
   bucket = "proveedores-${random_string.sufijo[count.index].id}"
-  tags = {
-    Owner       = "Nazareno"
+  tags = { //add tags to our buckets
+    Owner       = "Antonio"
     Environment = "Dev"
     Office      = "proveedores"
   }
