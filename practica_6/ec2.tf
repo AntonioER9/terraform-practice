@@ -4,12 +4,14 @@ resource "aws_instance" "public_instance" {
   subnet_id     = aws_subnet.public_subnet.id
   key_name      = data.aws_key_pair.key.key_name
 
-  lifecycle {
-    # create_before_destroy = true
-    # prevent_destroy = true
-    # ignore_changes = [ 
-    #   ami
-    #  ]
-    replace_triggered_by = [ aws_subnet.private_subnet ] # Si sufre un cambio, la subnet privada, vamos a destruir y construir nuevamente la instancia.
-  }
+  # lifecycle {
+  #   # create_before_destroy = true
+  #   # prevent_destroy = true
+  #   # ignore_changes = [ 
+  #   #   ami
+  #   #  ]
+  #   replace_triggered_by = [ 
+  #     aws_subnet.private_subnet 
+  #   ] # Si sufre un cambio, la subnet privada, vamos a destruir y construir nuevamente la instancia.
+  # }
 }
