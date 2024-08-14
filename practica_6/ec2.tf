@@ -41,3 +41,8 @@ resource "aws_instance" "public_instance" {
   #   ] # Si sufre un cambio, la subnet privada, vamos a destruir y construir nuevamente la instancia.
   # }
 }
+
+
+# resource "aws_instance" "mywebserver " { Importar una instancia existente
+
+# }
