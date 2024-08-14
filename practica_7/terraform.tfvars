@@ -8,6 +8,8 @@ tags = {
   "cloud"       = "AWS"
   "IAC"         = "Terraform"
   "IAC_Version" = "1.9.0"
+  "project"     = "cerberus"
+  "region"      = "virginia"
 }
 
 sg_ingress_cidr = "0.0.0.0/0"
