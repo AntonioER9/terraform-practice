@@ -20,34 +20,29 @@ resource "aws_subnet" "private_subnet" {
   tags = {
     "Name" = "private_subnet-${local.sufix}"
   }
-  depends_on = [
-    aws_subnet.public_subnet
-  ]
+  depends_on = [aws_subnet.public_subnet]
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc_virginia.id
-
   tags = {
     Name = "igw vpc virginia-${local.sufix}"
   }
 }
 
-
 resource "aws_route_table" "public_crt" {
   vpc_id = aws_vpc.vpc_virginia.id
-
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
-
   tags = {
     Name = "public crt-${local.sufix}"
   }
 }
 
-resource "aws_route_table_association" "crta_public_subnet" {
+
+resource "aws_route_table_association" "crta_public_association" {
   subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public_crt.id
 }
@@ -79,7 +74,6 @@ resource "aws_security_group" "sg_public_instance" {
     Name = "Public Instance SG-${local.sufix}"
   }
 }
-
 
 module "mybucket" {
   source      = "./modulos/s3"

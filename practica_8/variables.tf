@@ -14,7 +14,7 @@ variable "virginia_cidr" {
 # }
 
 variable "subnets" {
-  description = "Lista de subnets"
+  description = "Subnets list"
   type        = list(string)
 }
 
@@ -26,27 +26,20 @@ variable "tags" {
 variable "sg_ingress_cidr" {
   description = "CIDR for ingress traffic"
   type        = string
-
 }
 
 variable "ec2_specs" {
-  description = "Parametros de la instancia"
+  description = "Parametros de la instancia EC2"
   type        = map(string)
-
 }
 
+
 variable "enable_monitoring" {
-  description = "Habilita el despliegue de un servidor de monitoreo"
-  type        = number
-
-
+  description = "Habilitar monitoreo"
+  type        = bool
 }
 
 variable "ingress_ports_list" {
   description = "Lista de puertos de ingress"
   type        = list(number)
-
 }
-
-
-

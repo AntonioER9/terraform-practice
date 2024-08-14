@@ -9,7 +9,6 @@ terraform {
       version = "3.4.3"
     }
   }
-  required_version = "~>1.3.0"
 }
 
 provider "aws" {
@@ -18,8 +17,3 @@ provider "aws" {
     tags = var.tags
   }
 }
-
-
-
-
-

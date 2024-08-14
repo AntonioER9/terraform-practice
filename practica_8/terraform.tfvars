@@ -1,15 +1,13 @@
 virginia_cidr = "10.10.0.0/16"
-# public_subnet  = "10.10.0.0/24"
+# public_subnet = "10.10.0.0/24"
 # private_subnet = "10.10.1.0/24"
-
 subnets = ["10.10.0.0/24", "10.10.1.0/24"]
-
 tags = {
   "env"         = "dev"
-  "owner"       = "Nazareno"
+  "owner"       = "Antonio"
   "cloud"       = "AWS"
   "IAC"         = "Terraform"
-  "IAC_Version" = "1.3.6"
+  "IAC_Version" = "1.9.0"
   "project"     = "cerberus"
   "region"      = "virginia"
 }
@@ -21,6 +19,6 @@ ec2_specs = {
   "instance_type" = "t2.micro"
 }
 
-enable_monitoring = 0
+enable_monitoring = true
 
 ingress_ports_list = [22, 80, 443]
